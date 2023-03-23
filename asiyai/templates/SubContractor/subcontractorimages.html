@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Sub Contractor Upload/Image</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Sub Contractor Upload/Image</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+      <!-- Main content -->
+      <div class="content">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container-fluid">
+  
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card card-dark card-outline">
+                <div class="card-header">
+                  <h3 class="card-title font-weight-bold">Sub Contractor Upload/Image</h3>
+                </div>
+                <div class="card-body">
+                    <div id="file-part" class="content" role="tabpanel" aria-labelledby="file-part-trigger">
+                        <div class="form-group">
+                          {{form.as_p}}
+                        </div>
+                        <button class="btn btn-primary bg-yellow btn-radius elevation-2" onclick="stepper.previous()">Previous</button>
+                        <button type="submit" class="btn btn-primary bg-yellow btn-radius elevation-2">Submit</button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+      </from>
+      <hr>
+      {% if obj %}
+      <img src="{{obj.subcontractorimage.url}}" alt="image" class="img-thumbnail" height="25%" width="25%">
+      {% endif %}
+      
+      {% for x in img %}
+      <img src="{{x.subcontractorimage.url}}" alt="image" class="img-thumbnail" height="25%" width="25%">
+      {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+    {% endblock %}

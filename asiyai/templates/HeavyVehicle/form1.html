@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Address</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Address</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+      <!-- Main content -->
+      <div class="content">
+        <div class="container-fluid">
+        <form method=="POST">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card card-dark card-outline">
+                <div class="card-header">
+                  <h3 class="card-title font-weight-bold">Address
+
+                  </h3>
+                </div>
+                <div class="card-body">
+                      <div id="information-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger">
+                        <div class="form-group">
+                            <label for="state" class="font-weight-bold">Select State <span class="text-danger required-font-size">*</span></label>
+                            <select class="form-control" name="state" id="dpdlState">
+                                <option value="">----- Select State-----</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="districts" class="font-weight-bold">Select District <span class="text-danger required-font-size">*</span></label>
+                            <select class="form-control" name="district" id="dpdlDistrict">
+                              <option value="">----- Select District -----</option>
+                            </select>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label for="districts" class="font-weight-bold">Select Tehsil <span class="text-danger required-font-size">*</span></label>
+                            <select class="form-control" name="city" id="dpdlCity">
+                                <option value="">----- Select Tehsil -----</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary bg-yellow btn-radius elevation-2">Previous</a></button>
+                        <button type="submit" class="btn btn-primary bg-yellow btn-radius elevation-2" onclick="stepper.next()">Next</button>
+                      </div>
+                  
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <!-- /.row -->
+
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content -->
+    </div>
+</from>
+<script src="static/js/main.js"></script> 
+<!-- <script>
+  function populate(s1,s2){
+      var s1 = document.getElementById(s1);
+      var s2 = document.getElementById(s2);
+
+      s2.innerHTML = "";
+
+      if(s1.value == "india")
+      {
+        var optionArray = ['delhi|Delhi','mumbai|Mumbai'];
+      }
+      else if(s1.value == "america")
+      {
+        var optionArray = ['newyork|NEWYORK'];
+      }
+      for(var option in optionArray)
+      {
+        var pair = optionArray[option].split("|");
+        var newoption = document.createElement("option");
+        newoption.value=pair[0];
+        newoption.innerHTML=pair[1];
+        s2.options.add(newoption);
+      }
+
+  }
+
+</script> -->
+<script>
+
+  var districtList = [
+    { State: 'Uttar Pradesh', District: 'Farrukhabad' },
+    {State: 'Uttar Pradesh', District: 'Kannauj' },
+    { State: 'Uttar Pradesh', District: 'Mainpuri' },
+    { State: 'Other', District: 'Other' }
+  ];
+  var cityList = [
+    { District: 'Farrukhabad', city: 'Fatehgarh' },
+    { District: 'Mainpuri', city: 'Mainpuri' },
+    { District: 'Kannauj', city: 'Chhibramau' },
+    { District: 'Other', city: 'Other' }
+  ];
+  $(document).ready(function () {
+    debugger;
+    $(".divOtherState").hide();
+    $(".divOtherDistrict").hide();
+    $(".divOtherCity").hide();
+    $("#dpdlState").change(function () {
+      debugger;
+      if ($("#dpdlState").val() == "Other") {
+        $(".divOtherState").show();
+        const option = "<option val='Other'>Other</option>";
+        $("#dpdlDistrict").append(option);
+      } else {
+        $(".divOtherState").hide();
+        $(".divOtherDistrict").hide();
+        $(".divOtherCity").hide();
+        $("#dpdlDistrict").html("<option selected>Choose District</option>");
+        $("#dpdlCity").html("<option selected>Choose Tehsil</option>");
+        const districts = districtList.filter(m => m.State == $("#dpdlState").val() || m.State == "Other");
+        districts.forEach(element => {
+          const option = "<option val='" + element.District + "'>" + element.District + "</option>";
+          $("#dpdlDistrict").append(option);
+        });
+      }
+    });
+
+    $("#dpdlDistrict").change(function () {
+      debugger;
+      if ($("#dpdlDistrict").val() == "Other") {
+        $(".divOtherDistrict").show();
+        const option = "<option val='Other'>Other</option>";
+        $("#dpdlCity").append(option);
+      } else {
+        $(".divOtherDistrict").hide();
+        $(".divOtherCity").hide();
+        $("#dpdlCity").html("<option selected>Choose Tehsil</option>");
+        debugger;
+        const districts= cityList.filter(m => m.District == $("#dpdlDistrict").val() || m.District == "Other");
+        districts.forEach(element => {
+          const option = "<option val='" + element.city + "'>" + element.city + "</option>";
+          $("#dpdlCity").append(option);
+        });
+      }
+    });
+
+    $("#dpdlCity").change(function () {
+      debugger;
+      if ($("#dpdlCity").val() == "Other") {
+        $(".divOtherCity").show();
+      } else {
+        $(".divOtherCity").hide();
+      }
+    });
+  });
+</script>
+  <!-- /.content-wrapper -->
+{% endblock %}
+

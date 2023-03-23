@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Heavy Vehicle Register</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Heavy Vehicle Register</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-dark card-outline">
+              <div class="card-header">
+                <h3 class="card-title font-weight-bold">Heavy Vehicle Register</h3>
+              </div>
+              <div class="card-body">
+                <div class="bs-stepper">
+                  <div class="bs-stepper-header" role="tablist">
+                    <!-- your steps here -->
+                    <div class="step" data-target="#logins-part">
+                      <button type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+                        <span class="bs-stepper-circle elevation-2">1</span>
+                      </button>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step" data-target="#information-part">
+                      <button type="button" class="step-trigger" role="tab" aria-controls="information-part" id="information-part-trigger">
+                        <span class="bs-stepper-circle elevation-2">2</span>
+                      </button>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step" data-target="#file-part">
+                      <button type="button" class="step-trigger" role="tab" aria-controls="file-part" id="file-part-trigger">
+                        <span class="bs-stepper-circle elevation-2">3</span>
+                      </button>
+                    </div>
+                  </div>
+                
+                  <div class="bs-stepper-content">
+                  <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <!-- your steps content here -->
+                    <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
+                      <div class="form-group">
+                        <label for="vehicleName" class="font-weight-bold">Vehicle Name <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="vehiclename" name="vehical_name" placeholder="Enter Vehicle Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="companyName" class="font-weight-bold">Company Name <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="companyname" name="company_name" placeholder="Enter Company Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="vehicleNumber" class="font-weight-bold">Vehicle Number <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="vehiclenumber" name="vehical_number" placeholder="Enter Vehicle Number">
+                      </div>
+                      <div class="form-group">
+                        <label for="modelNumber" class="font-weight-bold">Model Number <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="modelnumber" name="model_number" placeholder="Enter Model Number">
+                      </div>
+                      <div class="form-group">
+                        <label for="ownerName" class="font-weight-bold">Owner Name <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="ownername" name="ownername" placeholder="Enter Owner Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="aadharNumber" class="font-weight-bold">Aadhar Number <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="aadharnumber" name="Aadhar_number" placeholder="Enter Aadhar Number">
+                      </div>
+                      <div class="form-group">
+                        <label for="mfgDate" class="font-weight-bold">Manufacturing Date <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="date" class="form-control" id="mfgdate" name="manufectoring_date" placeholder="Enter Manufacturing Date">
+                      </div>
+                      <div class="form-group">
+                        <label for="vehicle_image" class="font-weight-bold">Vehicle_Image <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="file" class="form-control" id="vehicle_image" name="vehicle_image" placeholder="Enter Vehicle_image" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary bg-yellow btn-radius elevation-2" onclick="stepper.next()">Next</button>
+                    </div>
+                  </form>
+                    <div id="information-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger">
+                      <div class="form-group">
+                          <label for="states" class="font-weight-bold">Select State <span class="text-danger required-font-size">*</span></label>
+                          <select name="states" class="form-control">
+                              <option value="">----- Select State -----</option>
+                              <option value="">Andhra Pradesh</option>
+                              <option value="">Madhya Pradesh</option>
+                              <option value="">Uttar Pradesh</option>
+                          </select>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="districts" class="font-weight-bold">Select District <span class="text-danger required-font-size">*</span></label>
+                          <select name="districts" class="form-control">
+                              <option value="">----- Select District -----</option>
+                              <option value="">Bhopal</option>
+                              <option value="">Indore</option>
+                              <option value="">Lucknow</option>
+                              <option value="">Kanpur</option>
+                          </select>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="districts" class="font-weight-bold">Select District <span class="text-danger required-font-size">*</span></label>
+                          <select name="districts" class="form-control">
+                              <option value="">----- Select Tehsil -----</option>
+                              <option value="">In AP</option>
+                              <option value="">In MP</option>
+                              <option value="">In UP</option>
+                          </select>
+                      </div>
+                      <button class="btn btn-primary bg-yellow btn-radius elevation-2" onclick="stepper.previous()">Previous</button>
+                      <button class="btn btn-primary bg-yellow btn-radius elevation-2" onclick="stepper.next()">Next</button>
+                    </div>
+
+                    <div id="file-part" class="content" role="tabpanel" aria-labelledby="file-part-trigger">
+                      <div class="form-group">
+                        <label for="inputFile" class="font-weight-bold">Choose File <span class="text-danger required-font-size">*</span></label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputFile">
+                            <label class="custom-file-label" for="inputFile">Choose file</label>
+                          </div>
+                          <div class="input-group-append">
+                            <span class="input-group-text">Upload</span>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="btn btn-primary bg-yellow btn-radius elevation-2" onclick="stepper.previous()">Previous</button>
+                      <button type="submit" class="btn btn-primary bg-yellow btn-radius elevation-2">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="/static/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/static/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- BS-Stepper -->
+<script src="/static/plugins/bs-stepper/js/bs-stepper.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/static/js/adminlte.js"></script>
+
+<script>
+  // BS-Stepper Init
+  document.addEventListener('DOMContentLoaded', function () {
+      window.stepper = new Stepper(document.querySelector('.bs-stepper'))
+  });
+</script>
+
+</body>
+</html>
+{% endblock %}

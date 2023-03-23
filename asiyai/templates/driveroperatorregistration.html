@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Driver Operator Register</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Driver Operator Register</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      
+    <form method="post">
+    {% csrf_token %}
+      <div class="container-fluid">
+      
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-dark card-outline">
+              <div class="card-header">
+                <h3 class="card-title font-weight-bold">Driver Operator Register</h3>
+              </div>
+              <div class="card-body">
+               
+                  <div class="bs-stepper-content">
+                    <!-- your steps content here -->
+                    <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
+                      <div class="form-group">
+                        <label for="vehicleName" class="font-weight-bold">Vehicle Name <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="vehiclename" placeholder="Enter Vehicle Name" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="companyName" class="font-weight-bold">Expriences/InYear <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="expriencesinyear" name="expriencesinyear" placeholder="Expriences/InYear" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="vehicleNumber" class="font-weight-bold">Driver Operator Name <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="driveroperatorname" name="driveroperatorname" placeholder="Driver Operator Name" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="modelNumber" class="font-weight-bold">Aadhar Number <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="Aadhar_number" name="Aadhar_number" placeholder="Aadhar Number" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="ownerName" class="font-weight-bold">Alternet Mobile Number <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="alternet_mobilenumber" name="alternet_mobilenumber" placeholder="Alternet Mobile Number" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="aadharNumber" class="font-weight-bold">License Number <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="license_number" name="license_number" placeholder="License Number" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary bg-yellow btn-radius elevation-2" onclick="stepper.next()">Next</button>
+                    </div>
+        
+                  </div>
+                </div>
+              
+            
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+
+      </div><!-- /.container-fluid -->
+    </form>
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  {% endblock %}

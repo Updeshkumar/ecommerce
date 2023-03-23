@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Labour Contractor Register</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Labour Contractor Register</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %} 
+      <div class="container-fluid">
+      
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-dark card-outline">
+              <div class="card-header">
+                <h3 class="card-title font-weight-bold">Labour Contractor Register</h3>
+              </div>
+              <div class="card-body">
+               
+                  <div class="bs-stepper-content">
+                    <!-- your steps content here -->
+                    <div id="logins-part" class="content" role="tabpanel" aria-labelledby="logins-part-trigger">
+                      <div class="form-group">
+                        <label for="vehicleName" class="font-weight-bold">Labour Contractor Name <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="labourcontractorname" name="labourcontractorname" placeholder="Labour Contractor Name" required>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="vehicleNumber" class="font-weight-bold">Lobour(InNumber) <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="lobourinnumber" name="lobourinnumber" placeholder="Lobour(InNumber)" required>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="companyName" class="font-weight-bold">Labour Work <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="labourwork" name="labourwork" placeholder="Labour Work" required>
+                      </div>
+                        
+                      <div class="form-group">
+                        <label for="vehicleNumber" class="font-weight-bold">Skilled Labour <span class="text-danger required-font-size">*</span></label></label>
+                        <select class="form-control" name="skilledlabour" id="skilledlabour">
+                          <option value="">----- Select option-----</option>
+                              <option value="10">10</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                      </select>                            
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="vehicleNumber" class="font-weight-bold">Unskilled Labour <span class="text-danger required-font-size">*</span></label></label>
+                        <select class="form-control" name="unskilledlabour" id="unskilledlabour">
+                          <option value="">----- Select option-----</option>
+                              <option value="10">10</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                      </select>                           
+                      </div>
+
+                      <div class="form-group">
+                        <label for="vehicleNumber" class="font-weight-bold">Professional Labour<span class="text-danger required-font-size">*</span></label></label>
+                        <select class="form-control" name="professionallabour" id="professionallabour">
+                          <option value="">----- Select option-----</option>
+                              <option value="10">10</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                      </select>                      
+                    </div>
+                      <div class="form-group">
+                        <label for="aadharNumber" class="font-weight-bold">Aadhar Number Front Image <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="file" class="form-control" id="Aadharnumberfrontimage" name="Aadharnumberfrontimage" placeholder="Aadhar No Front Image" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="aadharNumber" class="font-weight-bold">Aadhar Number Back Image <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="file" class="form-control" id="Aadharnumberbackimage" name="Aadharnumberbackimage" placeholder="Aadhar No Back Image" required>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label for="aadharNumber" class="font-weight-bold">Mobile Number <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="mobile_number" name="mobile_number" placeholder="Mobile Number" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="aadharNumber" class="font-weight-bold">Alternet Mobile Number <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="alternativemobilenumber" name="alternativemobilenumber" placeholder="Alternet Mobile Number" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="aadharNumber" class="font-weight-bold">Labour_Group_Image <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="file" class="form-control" id="labour_image" name="labour_image" placeholder="Labour Image" multiple required>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="aadharNumber" class="font-weight-bold">Email-Id <span class="text-danger required-font-size">*</span></label></label>
+                        <input type="text" class="form-control" id="emailId" name="emailId" placeholder="Email-Id" required>
+                      </div>
+                      
+                      <button type="submit" class="btn btn-primary bg-yellow btn-radius elevation-2" onclick="stepper.next()">Next</button>
+                    </div>
+        
+                  </div>
+                </div>
+              
+            
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+
+      </div><!-- /.container-fluid -->
+    </form>
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  {% endblock %}

@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Testing requirement api in django</title>
+    </head>
+    <body>
+        <strong>List of all Requirement</strong>
+        
+        <tr>
+        <th>title</th>
+        <th>description</th>
+        </tr>
+        {% for data in Requirement %}
+            <td>{{data.title}}</td>
+            <td>{{data.description}}</td>
+        {% endfor %}
+    </body>
+    </html>

@@ -1,0 +1,44 @@
+/* Custom Carousel */
+.owl-carousel .owl-item img {
+    border: 1px solid rgb(23 43 99 / 5%);
+    border-radius: 10px;
+}
+
+.owl-item > div {
+    cursor: pointer;
+    margin: 6% 8%;
+    transition: margin 0.4s ease;
+}
+
+.owl-item.center > div {
+    cursor: auto;
+    margin: 0;
+}
+
+.owl-item:not(.center) > div:hover {
+    opacity: .75;
+}
+
+.owl-dots {
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.owl-dots button.owl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #ccc;
+    margin: 0 3px;
+}
+
+.owl-dots button.owl-dot.active {
+    background-color: #666;
+}
+
+.owl-dots button.owl-dot:focus {
+    outline: none;
+}
+/* End Custom Carousel */

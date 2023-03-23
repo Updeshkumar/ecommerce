@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Driver Operator Address</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Driver Operator Address</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <div class="content">
+        <div class="container-fluid">
+  
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card card-dark card-outline">
+                <div class="card-header">
+                  <h3 class="card-title font-weight-bold">Driver Operator Address</h3>
+                </div>
+                <div class="card-body">
+                  
+                    <div class="bs-stepper-content">
+                        <div id="information-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger">
+                            <div class="form-group">
+                                <label for="states" class="font-weight-bold">Select State <span class="text-danger required-font-size">*</span></label>
+                                <select name="states" class="form-control">
+                                    <option value="">----- Select State -----</option>
+                                    <option value="">Andhra Pradesh</option>
+                                    <option value="">Madhya Pradesh</option>
+                                    <option value="">Uttar Pradesh</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="districts" class="font-weight-bold">Select District <span class="text-danger required-font-size">*</span></label>
+                                <select name="districts" class="form-control">
+                                    <option value="">----- Select District -----</option>
+                                    <option value="">Bhopal</option>
+                                    <option value="">Indore</option>
+                                    <option value="">Lucknow</option>
+                                    <option value="">Kanpur</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="districts" class="font-weight-bold">Select District <span class="text-danger required-font-size">*</span></label>
+                                <select name="districts" class="form-control">
+                                    <option value="">----- Select Tehsil -----</option>
+                                    <option value="">In AP</option>
+                                    <option value="">In MP</option>
+                                    <option value="">In UP</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary bg-yellow btn-radius elevation-2" onclick="stepper.previous()">Previous</button>
+                            <button class="btn btn-primary bg-yellow btn-radius elevation-2" onclick="stepper.next()">Next</button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+{% endblock %}

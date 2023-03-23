@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Requirement</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Requirement</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+
+        <!-- Heavy Vehicles -->
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Heavy Vehicles -->
+                <div class="card card-dark card-outline">
+                  {% for data in Requirement %}
+                    <div class="card-body">
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="outer">
+                              <div id="big" class="owl-carousel owl-theme">
+                                <div class="item image-aspect">
+                                {% if data.requirement_image %}
+                                    <img src="{{ data.requirement_image }}" class="rounded rounded-5">
+                                </div>
+                                {% else %}
+                                <div class="item image-aspect">
+                                  <img src="" class="rounded rounded-5">
+                                </div>
+                               {% endif %} 
+                            </div>
+
+                              </div>
+                              <!-- <div id="thumbs" class="owl-carousel owl-theme">
+                                <div class="item image-aspect">
+                                  <img src="i/static/mages/vehicles/1.jpg" class="rounded rounded-5">
+                                </div>
+                                <div class="item image-aspect">
+                                  <img src="/static/images/vehicles/2.jpg" class="rounded rounded-5">
+                                </div>
+                                <div class="item image-aspect">
+                                  <img src="/static/images/vehicles/3.jpg" class="rounded rounded-5">
+                                </div>
+                              </div>
+                            </div> -->
+                          </div>
+                          
+                          <div class="col-lg-6 col-md-6 col-sm-12">
+                              <h5 class="card-title font-weight-bold">Requirement Title Here : {{data.title}}</h5>
+                              <p class="card-text text-justify">Description: {{data.description}}</p>
+                              <a href="#" class="btn bg-yellow elevation-2">Request</a>
+                              <a href="#" class="btn btn-danger elevation-2 ml-2">Cancel</a>
+                          </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div><!-- /.card -->
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="js/adminlte.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var bigimage = $("#big");
+        var thumbs = $("#thumbs");
+        var syncedSecondary = true;
+
+        bigimage
+          .owlCarousel({
+          items: 1,
+          slideSpeed: 2000,
+          nav: true,
+          autoplay: true,
+          dots: false,
+          loop: true,
+          responsiveRefreshRate: 200,
+          navText: [
+            // '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+            // '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+          ]
+        })
+          .on("changed.owl.carousel", syncPosition);
+
+        thumbs
+          .on("initialized.owl.carousel", function() {
+          thumbs
+            .find(".owl-item")
+            .eq(0)
+            .addClass("current");
+        })
+          .owlCarousel({
+          items: 3,
+          dots: true,
+          nav: true,
+          navText: [
+            '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+            '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+          ],
+          smartSpeed: 200,
+          slideSpeed: 500,
+          slideBy: 4,
+          responsiveRefreshRate: 100
+        })
+          .on("changed.owl.carousel", syncPosition2);
+
+        function syncPosition(el) {
+          //if loop is set to false, then you have to uncomment the next line
+          //var current = el.item.index;
+
+          //to disable loop, comment this block
+          var count = el.item.count - 1;
+          var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
+
+          if (current < 0) {
+            current = count;
+          }
+          if (current > count) {
+            current = 0;
+          }
+          //to this
+          thumbs
+            .find(".owl-item")
+            .removeClass("current")
+            .eq(current)
+            .addClass("current");
+          var onscreen = thumbs.find(".owl-item.active").length - 1;
+          var start = thumbs
+          .find(".owl-item.active")
+          .first()
+          .index();
+          var end = thumbs
+          .find(".owl-item.active")
+          .last()
+          .index();
+
+          if (current > end) {
+            thumbs.data("owl.carousel").to(current, 100, true);
+          }
+          if (current < start) {
+            thumbs.data("owl.carousel").to(current - onscreen, 100, true);
+          }
+        }
+
+        function syncPosition2(el) {
+          if (syncedSecondary) {
+            var number = el.item.index;
+            bigimage.data("owl.carousel").to(number, 100, true);
+          }
+        }
+
+        thumbs.on("click", ".owl-item", function(e) {
+          e.preventDefault();
+          var number = $(this).index();
+          bigimage.data("owl.carousel").to(number, 300, true);
+        });
+    });
+</script>
+
+</body>
+
+
+{% endblock %}

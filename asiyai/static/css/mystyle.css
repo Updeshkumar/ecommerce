@@ -1,0 +1,239 @@
+:root {
+    --minimum-width: 300px;
+    --ratio: 16/9;
+}
+
+.image-aspect img {
+    background-color: #f0f0f0;
+    aspect-ratio: var(--ratio);
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+
+.my-rounded{
+    border-radius: 20px;
+}
+
+.custm-active{
+    background-color: #343a40!important;
+    color: #fff!important;
+}
+
+.page-item.my-active .page-link {
+    z-index: 3;
+    color: #000;
+    background-color: #FAB720;
+    border-color: #FAB720;
+    font-weight: 600;
+}
+
+.my-link{
+    color: #000;
+}
+
+/* .widget-category .widget-category-image {
+    left: 50%;
+    margin-left: -45px;
+    position: absolute;
+    top: 80px;
+} */
+
+.widget-category{
+    margin-top: 30px;
+}
+
+.widget-category .widget-category-image>img {
+    border: 3px solid #f1f1f1;
+    height: 100px;
+    width: 100px;
+}
+
+.widget-notification-image p>img {
+    border: 3px solid #f1f1f1;
+    height: 35px;
+    width: 35px;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: 500;
+    font-size: .9rem!important;
+}
+
+.required-font-size{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.custom-font-size{
+    font-size: .9rem!important;
+}
+
+.custom-search-box{
+    height: 40px!important;
+}
+
+.my-bg-dark{
+    background-color: #20272D;
+    color: #fff;
+}
+
+.bg-yellow{
+    background-color: #FAB720;
+    border-color: #FAB720;
+}
+
+.btn-radius{
+    border-radius: 50px;
+    padding: 5px 40px;
+}
+
+.notification-font{
+    font-size: .9rem!important;
+    color: #F6BC88;
+}
+
+.card-bg{
+    background-color: #20272D!important;
+}
+
+.card-outline-yellow{
+    border-top: 3px solid #FAB720!important;
+}
+
+.card-header-bottom{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.125)!important;
+}
+
+.custom-form-control{
+    background-color: #353F4B!important;
+    color: #fff!important;
+    height: 50px;
+    box-shadow: 4px 4px 4px 25% #000;
+    border: 1px #20272D!important;
+}
+
+.custom-input-group-text{
+    background-color: #353F4B!important;
+    border: 0px solid #20272D!important;
+    color: #919DA2!important;
+}
+
+.caret-style{
+    caret-color: #FAB720!important;
+}
+
+.my-text-light{
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.text-yellow{
+    color: #FAB720!important;;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+    background-color: #FAB720;
+    color: #000;
+}
+
+.icheck-primary > input:first-child:checked + label::before, .icheck-primary > input:first-child:checked + input[type="hidden"] + label::before {
+    background-color: #FAB720!important;
+    border-color: #FAB720!important;
+}
+
+[class*=icheck-]>input:first-child+input[type=hidden]+label::before, [class*=icheck-]>input:first-child+label::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #D3CFC8;
+    border-radius: 3px;
+    margin-left: -29px;
+}
+
+[class*=icheck-]>input:first-child:checked+input[type=hidden]+label::after, [class*=icheck-]>input:first-child:checked+label::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 10px;
+    border: 2px solid #20272D;
+    border-left: none;
+    border-top: none;
+    transform: translate(7.75px,4.5px) rotate(45deg);
+}
+
+
+
+.btn-yellow {
+    color: #20272D;
+    background-color: #FAB720;
+    border-color: #FAB720;
+    border-radius: 50px;
+    padding: 10px 10px;
+    box-shadow: none;
+    font-weight: 600;
+}
+
+.btn-white {
+    color: #20272D;
+    background-color: #DEF7FE;
+    border-color: #DEF7FE;
+    border-radius: 50px;
+    padding: 10px 10px;
+    box-shadow: none;
+    font-weight: 600;
+}
+
+.btn-red {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 50px;
+    height: 46px;
+    box-shadow: none;
+    font-weight: 600;
+}
+
+.btn-red:hover {
+    color: #fff;
+}
+
+.fa-style{
+    margin-left: 5px!important;
+}
+
+.active .bs-stepper-circle {
+    background-color: #FAB720!important;
+}
+
+.active .bs-stepper-circle {
+    color: #000!important;
+}
+
+.profile-font-size{
+    font-size: 16px!important;
+    letter-spacing: 0.5px;
+    font-weight: 500!important;
+}
+
+.btm-margin-fp {
+    margin-bottom: 1.2rem;
+}
+.btn-hu {
+    margin-bottom: 2rem;
+}
+
+.body{
+    background-image: url(index.jpeg);
+    background-size: 100%;
+}
+
+
+
+
+

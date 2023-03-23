@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AHV | Choose Profile</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="/static/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/css/adminlte.css">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="/static/css/mystyle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+</head>
+<body class="layout-top-nav">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-dark">
+            <a href="#" class="navbar-brand">
+                <img src="/static/images/logo.png" alt="AHV-Logo" class="brand-image" style="opacity: 1">
+                <span class="brand-text font-weight-bold">Asiyai Hevay Vehicle</span>
+            </a>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Legacy User Menu -->
+                <li class="nav-item dropdown user-menu">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                    <img src="/static/images/user.png" class="user-image img-circle elevation-2" alt="User Image">
+                    <span class="d-none d-md-inline">Vaibhav Gupta</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <!-- User image -->
+                    <li class="user-header bg-dark">
+                        <img src="/static/images/user.png" class="img-circle elevation-2" alt="User Image">
+                        <p>Vaibhav Gupta</p>
+                    </li>
+                    <!-- Menu Footer-->
+                    <li class="user-footer">
+                        <a href="#" class="btn btn-default btn-sm bg-yellow float-left"><i class="fas fa-sign-out-alt" style="margin-right: 5px;"></i>Sign out</a>
+                    </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <div class="register-page">
+            <div class="register-box">
+                <div class="card card-outline card-primary card-bg card-outline-yellow">
+                    <div class="card-header card-header-bottom logo text-center">
+                        <a href="#" target="_blank">
+                            <img src="/static/images/logo.png" alt="ahv-logo" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                    <form id="">
+                        <!-- {% csrf_token %} -->
+                        <div class="custom-form-control rounded rounded-2 d-flex mb-3">
+                            <div class="form-row clearfix">
+                                <div class="icheck-warning d-inline my-auto mx-3">
+                                    
+                                    <input type="radio" name="chooseProfile" value="heavyVehicle" id="heavyVehicle">
+                                    <label for="heavyVehicle">
+                                     <span class="profile-font-size">Heavy Vehicle</span></a>
+                                    </label> 
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="custom-form-control rounded rounded-2 d-flex mb-3">
+                            <div class="form-row clearfix">
+                                <div class="icheck-warning d-inline my-auto mx-3">
+                                    <input type="radio" name="chooseProfile" id="driverOperator">
+                                    <label for="driverOperator">
+                                        <span class="profile-font-size">Driver/Operator</span>
+                                    </label> 
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="custom-form-control rounded rounded-2 d-flex mb-3">
+                            <div class="form-row clearfix">
+                                <div class="icheck-warning d-inline my-auto mx-3">
+                                    <input type="radio" name="chooseProfile" id="subContractor">
+                                    <label for="subContractor">
+                                        <span class="profile-font-size">Sub Contractor</span>
+                                    </label> 
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="custom-form-control rounded rounded-2 d-flex mb-3">
+                            <div class="form-row clearfix">
+                                <div class="icheck-warning d-inline my-auto mx-3">
+                                    <input type="radio" name="chooseProfile" id="labourContractor">
+                                    <label for="labourContractor">
+                                        <span class="profile-font-size">Labour Contractor</span>
+                                    </label> 
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="custom-form-control rounded rounded-2 d-flex">
+                            <div class="form-row clearfix">
+                                <div class="icheck-warning d-inline my-auto mx-3">
+                                    <input type="radio" name="chooseProfile" id="normalUser">
+                                    <label for="normalUser">
+                                        <span class="profile-font-size">Normal User</span>
+                                    </label> 
+                                </div>
+                            </div>
+                        </div>
+        
+                        <button onclick="fn1()" id="btn1" class="btn btn-block btn-yellow mt-3">Next</button>
+                   </form>
+                    </div>
+                    <!-- /.form-box -->
+                </div><!-- /.card -->
+            </div>
+            <!-- /.register-box -->
+        </div>
+
+        <!-- Main Footer -->
+        <footer class="main-footer navbar-dark my-text-light">
+            <!-- To the right -->
+            <div class="float-right d-none d-sm-inline">
+            Version 1.0
+            </div>
+            <!-- Default to the left -->
+            <span>Copyright &copy; 2022</span>&nbsp;<strong><a href="#" class="text-yellow">Asiyai Hevay Vehicle</a></strong> All rights reserved.
+        </footer>
+    </div>
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+
+<script>
+    // function Form()
+    // {
+    //     var selectvalue= $('input[name=chooseProfile]:checked', '#Form').val();
+    //     if(selectvalue=="heavyVehicle"){
+    //         window.open("http://127.0.0.1:8000/v1/hvbesicdetails", '_self');
+    //         return true;
+    //     }
+    // return false;
+    // };
+    function fn1(){
+        var heavyVehicle = document.getElementById("heavyVehicle");
+        var driverOperator = document.getElementById("driverOperator");
+        var subContractor = document.getElementById("subContractor");
+        var labourContractor = document.getElementById("labourContractor");
+        var normalUser = document.getElementById("normalUser");
+
+        if(heavyVehicle.checked==true)
+            // alert("The Profile is Selected is:" + heavyVehicle.value);
+            window.open("http://127.0.0.1:8000/v1/hvbesicdetails", '_blank');
+            
+
+        else if(driverOperator.checked==true)
+            window.open("http://127.0.0.1:8000/v1/doregistrations", '_blank');
+        else if(subContractor.checked==true)
+            window.open("http://127.0.0.1:8000/v1/subcregistration", '_blank');
+        else if(labourContractor.checked==true)
+            window.open("http://127.0.0.1:8000/v1/lacoregistration", '_blank');
+        else if(normalUser.checked==true)
+            window.open("http://127.0.0.1:8000/v1/normaluser", '_blank');
+        else
+            alert("Please Select Your Profile");
+   }
+
+</script>
+</body>
+</html>

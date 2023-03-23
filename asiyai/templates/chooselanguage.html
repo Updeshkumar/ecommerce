@@ -1,0 +1,154 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AHV | Choose Languages</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="/static/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/css/adminlte.css">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="/static/css/mystyle.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body class="layout-top-nav">
+
+  <!-- <h1>{% translate "my name is Updesh kumar" %} -->
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Languages
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for user in languages %}
+            <li>
+                <a class="dropdown-item" href="/{{ user.code }}/">
+                    {{ user.name_local }}
+                </a>
+                </li>
+                {% endfor %}
+        </div>
+      </div>
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar-expand navbar-dark text-center">
+            <a href="#" class="navbar-brand">
+                <h2><span class="brand-text font-weight-bold">{% translate "Choose Languages" %}</span></h2>
+            </a>
+           
+        </nav>
+        <!-- /.navbar -->
+        
+        <div class="register-page" style="background-image: url('{% static "/images/index.jpeg"%}'); background-size: auto; background-repeat: no-repeat;  background-size: cover;">
+            <div class="register-box">
+                <div class="card card-outline card-primary card-bg card-outline-yellow">
+                    <div class="card-header card-header-bottom logo text-center text-light bg-dark">
+                        <a href="#" target="_blank">
+                            <h2>{% translate "Choose Languages" %}</h2>
+                        </a>
+                    </div>
+                    
+                    <div class="card-body">
+                    <form action="#" method="post">
+                        <div class="custom-form-control rounded rounded-2 d-flex mb-3">
+                            <div class="form-row clearfix">
+                                <div class="icheck-warning d-inline my-auto mx-3">
+                                    <input type="radio" name="chooseProfile" id="heavyVehicle">
+                                    <label for="heavyVehicle">
+                                        <span class="profile-font-size">हिंदी</span>
+                                    </label> 
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="custom-form-control rounded rounded-2 d-flex mb-3">
+                            <div class="form-row clearfix">
+                                <div class="icheck-warning d-inline my-auto mx-3">
+                                   <a href="{% url "firstenglish" %}"> <input type="radio" name="chooseProfile" id="driverOperator">
+                                    <label for="driverOperator">
+                                        <span class="profile-font-size">English</span>
+                                    </label></a>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="custom-form-control rounded rounded-2 d-flex mb-3">
+                            <div class="form-row clearfix">
+                                <div class="icheck-warning d-inline my-auto mx-3">
+                                    <input type="radio" name="chooseProfile" id="subContractor">
+                                    <label for="subContractor">
+                                        <span class="profile-font-size">Marathi/मराठी</span>
+                                    </label> 
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="custom-form-control rounded rounded-2 d-flex mb-3">
+                            <div class="form-row clearfix">
+                                <div class="icheck-warning d-inline my-auto mx-3">
+                                    <input type="radio" name="chooseProfile" id="labourContractor">
+                                    <label for="labourContractor">
+                                        <span class="profile-font-size">Bhojpuri/भोजपुरी</span>
+                                    </label> 
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="custom-form-control rounded rounded-2 d-flex">
+                            <div class="form-row clearfix">
+                                <div class="icheck-warning d-inline my-auto mx-3">
+                                    <input type="radio" name="chooseProfile" id="normalUser">
+                                    <label for="normalUser">
+                                        <span class="profile-font-size">Kannad/कन्नड
+                                        </span>
+                                    </label> 
+                                </div>
+                            </div>
+                        </div>
+        
+                        <a href="{% url "sendotp" %}" class="btn btn-block btn-yellow mt-3">Next</a>
+                    </form>
+                 </div>
+                
+            </div>
+            
+          
+    <!-- /.form-box -->
+    
+            <!-- /.register-box -->
+      
+        <!-- Main Footer -->
+                <footer class="main-footer navbar-dark my-text-light">
+                    <!-- To the right -->
+                    <div class="float-right d-none d-sm-inline">
+                    Version 1.0
+                    </div>
+                    <!-- Default to the left -->
+                    <span>Copyright &copy; 2022</span>&nbsp;<strong><a href="#" class="text-yellow">Asiyai Hevay Vehicle</a></strong> All rights reserved.
+                </footer>
+            </div>
+        </div>
+</div>
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+</body>
+</html>

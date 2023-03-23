@@ -1,0 +1,650 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AHV | Dashboard</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/css/adminlte.css">
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="/static/css/mystyle.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/dashboard-carousel.css">
+  
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+
+    <!-- SEARCH FORM -->
+    <!-- <form class="form-inline ml-3"> -->
+      <div class="input-group input-group-sm custom-search-box">
+        <input class="form-control form-control-navbar custom-search-box" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    <!-- </form> -->
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-header">8 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 User Requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="notification.html" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <!-- Legacy User Menu -->
+      <li class="nav-item dropdown user-menu">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+          <img src="/static/images/user.png" class="user-image img-circle elevation-2" alt="User Image">
+          <span class="d-none d-md-inline">Vaibhav Gupta</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <!-- User image -->
+          <li class="user-header bg-dark">
+            <img src="/static/images/user.png" class="img-circle elevation-2" alt="User Image">
+
+            <p>Vaibhav Gupta</p>
+          </li>
+          <!-- Menu Footer-->
+          <li class="user-footer">
+            <a href="#" class="btn btn-default btn-sm bg-yellow"><i class="fas fa-user-circle" style="margin-right: 5px;"></i>Profile</a>
+            <a href="#" class="btn btn-default btn-sm bg-yellow float-right"><i class="fas fa-sign-out-alt" style="margin-right: 5px;"></i>Sign out</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <img src="/static/images/logo.png" alt="AHV-Logo" class="brand-image" style="opacity: 1">
+      <span class="brand-text">AHV</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="/static/images/user.png" class="img-circle" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Vaibhav Gupta</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-clipboard-list"></i>
+              <p>
+                Categories
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-list-ol"></i>
+              <p>
+                Requirement
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-bell"></i>
+              <p>
+                Notifications
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-user-circle"></i>
+              <p>
+                Account
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-list-alt"></i>
+              <p>
+                Form
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>
+                Sign out
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+<div id="myModalhv" class="modalhv">
+
+    <!-- Modal content -->
+    <div class="modalhv-content" style="background-color: white;" >
+      <h4 style="text-align: left;"><b>For Registration</b></h4>
+      <button class="popbutton"><h5 style="color: blue;"><a href="{% url 'profile' %}">Go For Registration</a></h5></button>
+      <button class="popbutton1"><b><h5 style="color: blue;"><a href="{% url 'dashboard' %}">Back</a></h5></button>
+      <!-- <span class="close">&times;</span> -->
+    </div>
+  </div>
+</div>
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="owl-carousel">
+                    <div class="image-aspect">
+                        <img src="/static/images/jcb.png" alt="">
+                    </div>
+                    <div class="image-aspect">
+                        <img src="/static/images/hyva.png" alt="">
+                    </div>
+                    <div class="image-aspect">
+                        <img src="/static/images/driller.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Heavy Vehicles -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card card-dark card-outline">
+              <div class="card-header font-weight-bold d-flex">
+                Heavy Vehicles
+              <a class="btn btn-sm btn-dark bg-yellow ml-auto elevation-2"> <button class="btn btn-sm btn-dark bg-yellow ml-auto elevation-2" id="myBtn">View All</button></a>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="card">
+                          <div class="image-aspect">
+                            <img src="/static/images/vehicles/1.jpg" class="card-img-top" alt="...">
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Vehicle Name</h5>
+                            <p class="card-text mb-0">Address: MP Nagar Zone - II,Trasport Nagar, Bhopal, Madhya Pradesh - 462010</p>
+                            <p class="card-text font-weight-bold">Vehicle Number: MP20 7895</p>
+                            <!-- <a href="vehicle-detail.html" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="card">
+                          <div class="image-aspect">
+                            <img src="/static/images/vehicles/2.jpg" class="card-img-top" alt="...">
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Vehicle Name</h5>
+                            <p class="card-text mb-0">Address: MP Nagar Zone - II,Trasport Nagar, Bhopal, Madhya Pradesh - 462010</p>
+                            <p class="card-text font-weight-bold">Vehicle Number: MP20 7895</p>
+                            <!-- <a href="vehicle-detail.html" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="card">
+                          <div class="image-aspect">
+                            <img src="/static/images/vehicles/3.jpg" class="card-img-top" alt="...">
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Vehicle Name</h5>
+                            <p class="card-text mb-0">Address: MP Nagar Zone - II,Trasport Nagar, Bhopal, Madhya Pradesh - 462010</p>
+                            <p class="card-text font-weight-bold">Vehicle Number: MP20 7895</p>
+                            <!-- <a href="vehicle-detail.html" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                      <div class="card">
+                        <div class="image-aspect">
+                          <img src="/static/images/vehicles/1.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title font-weight-bold">Vehicle Name</h5>
+                          <p class="card-text mb-0">Address: MP Nagar Zone - II,Trasport Nagar, Bhopal, Madhya Pradesh - 462010</p>
+                          <p class="card-text font-weight-bold">Vehicle Number: MP20 7895</p>
+                          <!-- <a href="vehicle-detail.html" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /.card -->
+          </div>
+          <!-- /.col-md-6 -->
+          
+        </div>
+        <!-- /.row -->
+
+        <!-- Driver/Operator -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card card-dark card-outline">
+              <div class="card-header font-weight-bold d-flex">
+                Driver/Operator
+              <a class="btn btn-sm btn-dark bg-yellow ml-auto elevation-2"> <button class="btn btn-sm btn-dark bg-yellow ml-auto elevation-2" id="myBtn1">View All</button></a>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="card">
+                          <div class="image-aspect">
+                            <img src="/static/images/driver/1.jpg" class="card-img-top" alt="...">
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Driver/Operator Name</h5>
+                            <p class="card-text mb-0">Work Profile Here</p>
+                            <p class="card-text font-weight-bold">Contact Number: 9876543210</p>
+                            <!-- <a href="#" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="card">
+                          <div class="image-aspect">
+                            <img src="/static/images/driver/2.jpg" class="card-img-top" alt="...">
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Vehicle Name Here</h5>
+                            <p class="card-text mb-0">Work Profile Here</p>
+                            <p class="card-text font-weight-bold">Contact Number: 9876543210</p>
+                            <!-- <a href="#" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="card">
+                          <div class="image-aspect">
+                            <img src="/static/images/driver/3.jpg" class="card-img-top" alt="...">
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Vehicle Name Here</h5>
+                            <p class="card-text mb-0">Work Profile Here</p>
+                            <p class="card-text font-weight-bold">Contact Number: 9876543210</p>
+                            <!-- <a href="#" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                      <div class="card">
+                        <div class="image-aspect">
+                          <img src="/static/images/driver/4.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title font-weight-bold">Vehicle Name Here</h5>
+                          <p class="card-text mb-0">Work Profile Here</p>
+                          <p class="card-text font-weight-bold">Contact Number: 9876543210</p>
+                          <!-- <a href="#" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /.card -->
+          </div>
+          <!-- /.col-md-6 -->
+          
+        </div>
+        <!-- /.row -->
+
+        <!-- Sub Contractor -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card card-dark card-outline">
+              <div class="card-header font-weight-bold d-flex">
+                Sub Contractor
+                <a class="btn btn-sm btn-dark bg-yellow ml-auto elevation-2"> <button class="btn btn-sm btn-dark bg-yellow ml-auto elevation-2" id="myBtn2">View All</button></a>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="card">
+                          <div class="image-aspect">
+                            <img src="/static/images/contractor/1.jpg" class="card-img-top" alt="...">
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Sub Contractor Name</h5>
+                            <p class="card-text mb-0">Work Profile Here</p>
+                            <p class="card-text font-weight-bold">Contact Number: 9876543210</p>
+                            <!-- <a href="#" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="card">
+                          <div class="image-aspect">
+                            <img src="/static/images/contractor/2.jpg" class="card-img-top" alt="...">
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Sub Contractor Name</h5>
+                            <p class="card-text mb-0">Work Profile Here</p>
+                            <p class="card-text font-weight-bold">Contact Number: 9876543210</p>
+                            <!-- <a href="#" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="card">
+                          <div class="image-aspect">
+                            <img src="/static/images/contractor/3.jpg" class="card-img-top" alt="...">
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Sub Contractor Name</h5>
+                            <p class="card-text mb-0">Work Profile Here</p>
+                            <p class="card-text font-weight-bold">Contact Number: 9876543210</p>
+                            <!-- <a href="#" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                      <div class="card">
+                        <div class="image-aspect">
+                          <img src="/static/images/contractor/4.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title font-weight-bold">Sub Contractor Name</h5>
+                          <p class="card-text mb-0">Work Profile Here</p>
+                          <p class="card-text font-weight-bold">Contact Number: 9876543210</p>
+                          <!-- <a href="#" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /.card -->
+          </div>
+          <!-- /.col-md-6 -->
+          
+        </div>
+        <!-- /.row -->
+
+        <!-- Labour Contractor -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card card-dark card-outline">
+              <div class="card-header font-weight-bold d-flex">
+                Labour Contractor
+                <a class="btn btn-sm btn-dark bg-yellow ml-auto elevation-2"> <button class="btn btn-sm btn-dark bg-yellow ml-auto elevation-2" id="myBtn3">View All</button></a>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="card">
+                          <div class="image-aspect">
+                            <img src="/static/images/labour/1.png" class="card-img-top" alt="...">
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Labour Contractor Name</h5>
+                            <p class="card-text mb-0">Work Profile Here</p>
+                            <p class="card-text font-weight-bold">Contact Number: 9876543210</p>
+                            <!-- <a href="#" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="card">
+                          <div class="image-aspect">
+                            <img src="/static/images/labour/2.jpg" class="card-img-top" alt="...">
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Labour Contractor Name</h5>
+                            <p class="card-text mb-0">Work Profile Here</p>
+                            <p class="card-text font-weight-bold">Contact Number: 9876543210</p>
+                            <!-- <a href="#" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="card">
+                          <div class="image-aspect">
+                            <img src="/static/images/labour/3.jpg" class="card-img-top" alt="...">
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Labour Contractor Name</h5>
+                            <p class="card-text mb-0">Work Profile Here</p>
+                            <p class="card-text font-weight-bold">Contact Number: 9876543210</p>
+                            <!-- <a href="#" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                      <div class="card">
+                        <div class="image-aspect">
+                          <img src="/static/images/labour/4.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title font-weight-bold">Labour Contractor Name</h5>
+                          <p class="card-text mb-0">Work Profile Here</p>
+                          <p class="card-text font-weight-bold">Contact Number: 9876543210</p>
+                          <!-- <a href="#" class="btn btn-sm btn-success elevation-2">View More</a> -->
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /.card -->
+          </div>
+          <!-- /.col-md-6 -->
+          
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer navbar-dark my-text-light">
+    <!-- To the right -->
+    <div class="float-right d-none d-sm-inline">
+      Version 1.0
+    </div>
+    <!-- Default to the left -->
+    <span>Copyright &copy; 2022</span>&nbsp;<strong><a href="#" class="text-yellow">Asiyai Hevay Vehicle</a></strong> All rights reserved.
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="js/adminlte.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModalhv");
+  
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+  var btn1 = document.getElementById("myBtn1");
+  var btn2 = document.getElementById("myBtn2");
+  var btn3 = document.getElementById("myBtn3");
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  btn1.onclick = function() {
+    modal.style.display = "block";
+  }
+  btn2.onclick = function() {
+    modal.style.display = "block";
+  }
+  btn3.onclick = function() {
+    modal.style.display = "block";
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  </script>
+
+<script>
+    var $owl = $('.owl-carousel');
+
+    $owl.children().each( function( index ) {
+        $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
+    });
+
+    $owl.owlCarousel({
+        center: true,
+        loop: true,
+        dots: true,
+        slideTransition: 'linear',
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplaySpeed: 500,
+        items: 3,
+        responsive: {
+        0: {
+          items: 1,
+          nav: false,
+          loop: true,
+        },
+        600: {
+          items: 2,
+          nav: false,
+          loop: true,
+        },
+        1000: {
+          items: 2,
+          nav: false,
+          loop: true,
+        },
+      },
+    });
+
+    $(document).on('click', '.owl-item>div', function() {
+        var $speed = 500;  //in ms
+        $owl.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
+    });
+</script>
+
+</body>
+</html>

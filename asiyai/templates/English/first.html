@@ -1,0 +1,109 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% trans "AHV | Choose Languages Hindi" %}</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="/static/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/css/adminlte.css">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="/static/css/mystyle.css">
+</head>
+<body class="layout-top-nav">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-dark">
+            <a href="#" class="navbar-brand">
+                <img src="/static/images/logo.png" alt="AHV-Logo" class="brand-image" style="opacity: 1">
+                <span class="brand-text font-weight-bold">{% trans "Asiyai Hevay Vehicle" %}</span>
+            </a>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Legacy User Menu -->
+                <li class="nav-item dropdown user-menu">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                    <img src="/static/images/user.png" class="user-image img-circle elevation-2" alt="User Image">
+                    <span class="d-none d-md-inline">{% trans "Updesh kumar" %}</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <!-- User image -->
+                    <li class="user-header bg-dark">
+                        <img src="/static/images/user.png" class="img-circle elevation-2" alt="User Image">
+                        <p>{% trans "Updesh kumar" %}</p>
+                    </li>
+                    <!-- Menu Footer-->
+                    <li class="user-footer">
+                        <a href="#" class="btn btn-default btn-sm bg-yellow float-left"><i class="fas fa-sign-out-alt" style="margin-right: 5px;"></i>Sign out</a>
+                    </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <div class="register-page">
+            <div class="register-box">
+                <div class="card card-outline card-primary card-bg card-outline-yellow">
+                    <div class="card-header card-header-bottom logo text-center">
+                        <a href="#" target="_blank">
+                            <img src="/static/images/logo.png" alt="ahv-logo" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <div class="custom-form-control rounded rounded-2 d-flex mb-3">
+                            <div class="form-row clearfix">
+                                <div class="icheck-warning d-inline my-auto mx-3">
+                                    <p class="profile-font-size"><h5>{% trans "All Types Of Machines Available" %}</h5></p>
+                                    </label> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="text-white bg-#212529 col-sm-12">
+                    <p>
+                        {% trans "The number of lines in a paragraph depends on 
+                        size of the browser window. 
+                        If you resize the browser window, the number of 
+                        lines in this paragraph will change." %}
+                    </p>
+                </div>
+                        <a href="{% url "sendotp" %}" class="btn btn-block btn-yellow mt-3 btm-margin-fp">{% trans "Next" %}</a>
+                    </form>
+                    </div>
+                </div>
+                    <!-- /.form-box -->
+                </div><!-- /.card -->
+            </div>
+            <!-- /.register-box -->
+        </div>
+
+        <!-- Main Footer -->
+        <footer class="main-footer navbar-dark my-text-light">
+            <!-- To the right -->
+            <div class="float-right d-none d-sm-inline">
+            Version 1.0
+            </div>
+            <!-- Default to the left -->
+            <span>Copyright &copy; 2022</span>&nbsp;<strong><a href="#" class="text-yellow">{% trans "Asiyai Hevay Vehicle" %}</a></strong> {% trans "All rights reserved." %}
+        </footer>
+    </div>
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AHV | Registration With Mobile Number</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/css/adminlte.css">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="/static/css/mystyle.css">
+</head>
+<body class="hold-transition register-page" style="background-image: url('{% static "/images/index.jpeg"%}'); background-size: auto; background-repeat: no-repeat;  background-size: cover;">
+<div class="register-box">
+  <div class="card card-outline card-primary card-bg card-outline-yellow">
+    <div class="card-header card-header-bottom logo text-center">
+        <a href="#" target="_blank">
+            <img src="/static/images/logo.png" alt="ahv-logo" class="img-fluid">
+        </a>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg text-white">Register a new member</p>
+
+      <form method="POST">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+          <input type="text" id="input1" class="form-control custom-form-control caret-style" name="mobileNo" placeholder="Enter Mobile Number">
+          <div class="input-group-append">
+            <div class="input-group-text custom-input-group-text">
+                <span class="fas fa-phone-alt"></span>
+            </div>
+          </div>
+        </div>
+        
+        <a href="#" class="text-yellow float-right custom-font-size mb-3 mt-n2">Use Mobile:No</a> 
+
+        <button type="submit" id="" class="btn btn-block btn-yellow">CONTINUE</button>
+        </form>
+    </div>
+    <!-- /.form-box -->
+  </div><!-- /.card -->
+</div>
+<!-- /.register-box -->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<script>
+  $("#continueid").on('click', function(){
+  $.ajax({
+    url: '127.0.0.1:8000/v1/send-otp',
+    type: 'POST',
+    data : {countryCode :91, mobileNo : "7753828863", actionType: "REGISTRATION"},
+    contentType: 'application/json', // ConentType that your are sending. No contentType needed if you just posting as query string parameters.
+    success: function(response){
+        // do whatever you want with response
+        console.log("success")
+        console.log(response)
+     },
+    error: function(error){
+      console.log("success")
+      console.log(error)
+      
+    }
+});
+});
+</script>
+<script>
+  document.getElementById('input1').focus();
+</script>
+
+
+</body>
+</html>

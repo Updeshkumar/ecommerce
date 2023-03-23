@@ -1,0 +1,258 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Heavy Vehicle Address</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Heavy Vehicle Address</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+      <!-- Main content -->
+      <div class="content">
+        <div class="container-fluid">
+        <form method=="POST">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card card-dark card-outline">
+                <div class="card-header">
+                  <h3 class="card-title font-weight-bold">Heavy Vehicle Normal User
+
+                  </h3>
+                </div>
+                <div class="card-body">
+                      <div id="information-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger">
+                        <div class="form-group">
+                            <label for="vehicleName" class="font-weight-bold">Enter User Name <span class="text-danger required-font-size">*</span></label></label>
+                            <input type="text" class="form-control" id="vehical_name" name="vehical_name" placeholder="Enter User Name" required>
+                          </div>
+                        <div class="form-group">
+                            <label for="state" class="font-weight-bold">Select Country <span class="text-danger required-font-size">*</span></label>
+                            <select class="form-control" name="country" id="dpdlCountry">
+                                <option value="">----- Select Country-----</option>
+                                    <option value="India">India</option>
+                                    <option value="Us">United State</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="districts" class="font-weight-bold">Select State <span class="text-danger required-font-size">*</span></label>
+                            <select class="form-control" name="state" id="dpdlState">
+                              <option value="">----- Select State -----</option>
+                            </select>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label for="districts" class="font-weight-bold">Select District <span class="text-danger required-font-size">*</span></label>
+                            <select class="form-control" name="district" id="dpdlCity">
+                                <option value="">----- Select District -----</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary bg-yellow btn-radius elevation-2">Previous</a></button>
+                        <button type="submit" class="btn btn-primary bg-yellow btn-radius elevation-2" onclick="stepper.next()">Next</button>
+                      </div>
+                  
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <!-- /.row -->
+
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content -->
+    </div>
+</from>
+<script src="static/js/main.js"></script> 
+<!-- <script>
+  function populate(s1,s2){
+      var s1 = document.getElementById(s1);
+      var s2 = document.getElementById(s2);
+
+      s2.innerHTML = "";
+
+      if(s1.value == "india")
+      {
+        var optionArray = ['delhi|Delhi','mumbai|Mumbai'];
+      }
+      else if(s1.value == "america")
+      {
+        var optionArray = ['newyork|NEWYORK'];
+      }
+      for(var option in optionArray)
+      {
+        var pair = optionArray[option].split("|");
+        var newoption = document.createElement("option");
+        newoption.value=pair[0];
+        newoption.innerHTML=pair[1];
+        s2.options.add(newoption);
+      }
+
+  }
+
+</script> -->
+<script>
+
+  var stateList = [
+    { Country: 'India', State: 'Andhra Pradesh' },
+    { Country: 'India', State: 'Uttar Pradesh' },
+    { Country: 'India', State: 'Bihar' },
+    { Country: 'India', State: 'Madhya Pradesh' },
+    { Country: 'Us', State: 'Alabama' },
+    { Country: 'Us', State: 'Arizona' },
+    { Country: 'Us', State: 'California' },
+    { Country: 'Other', State: 'Other' }
+  ];
+  var cityList = [
+    { State: 'Alabama', city: 'Abbeville' },
+    { State: 'Alabama', city: 'Adamsville' },
+    { State: 'Arizona', city: 'Phoenix' },
+    { State: 'Arizona', city: 'Tucson' },
+    { State: 'Andhra Pradesh', city: 'Srikakulam' },
+    { State: 'Andhra Pradesh', city: 'Parvathipuram Manyam' },
+    { State: 'Andhra Pradesh', city: 'Vizianagaram' },
+    { State: 'Andhra Pradesh', city: 'Visakhapatnam' },
+    { State: 'Andhra Pradesh', city: 'Alluri Sitharama Raju' },
+    { State: 'Andhra Pradesh', city: 'Anakapalli' },
+    { State: 'Andhra Pradesh', city: 'Kakinada' },
+    { State: 'Andhra Pradesh', city: 'East Godavari' },
+    { State: 'Andhra Pradesh', city: 'Dr. B.R. Ambedkar Konaseema' },
+    { State: 'Andhra Pradesh', city: 'West Godavari' },
+    { State: 'Andhra Pradesh', city: 'NTR' },
+    { State: 'Andhra Pradesh', city: 'Krishna' },
+    { State: 'Andhra Pradesh', city: 'Palnadu' },
+  // district Uttar pradesh
+    { State: 'Uttar Pradesh', city: 'Agra' },
+    { State: 'Uttar Pradesh', city: 'Aligarh' },
+    { State: 'Uttar Pradesh', city: 'Allahabad' },
+    { State: 'Uttar Pradesh', city: 'Ambedkar Nagar' },
+    { State: 'Uttar Pradesh', city: 'Amethi' },
+    { State: 'Uttar Pradesh', city: 'Auraiya' },
+    { State: 'Uttar Pradesh', city: 'Azamgarh' },
+    { State: 'Uttar Pradesh', city: 'Baghpat' },
+    { State: 'Uttar Pradesh', city: 'Lakhimpur kheri' },
+    { State: 'Uttar Pradesh', city: 'Lalitpur' },
+    { State: 'Uttar Pradesh', city: 'Maharajganj' },
+    { State: 'Uttar Pradesh', city: 'Mahoba' },
+    { State: 'Uttar Pradesh', city: 'Mainpuri' },
+    { State: 'Uttar Pradesh', city: 'Merrut' }, 
+    { State: 'Uttar Pradesh', city: 'Mathura' },
+    // district Bihar
+    { State: 'Bihar', city: 'Araria' },
+    { State: 'Bihar', city: 'Arwal' },
+    { State: 'Bihar', city: 'Aurangabad' },
+    { State: 'Bihar', city: 'Banka' },
+    { State: 'Bihar', city: 'Begusarai' },
+    { State: 'Bihar', city: 'Bhagalpur' },
+    { State: 'Bihar', city: 'Bhojpur' },
+    { State: 'Bihar', city: 'Buxar' },
+    { State: 'Bihar', city: 'Mathura' },
+    { State: 'Bihar', city: 'East Champaran' },
+    { State: 'Bihar', city: 'Gaya' },
+    { State: 'Bihar', city: 'Gopalganj' },
+    { State: 'Bihar', city: 'Jamui' },
+    { State: 'Bihar', city: 'Jehanabad' },
+    { State: 'Bihar', city: 'Khagaria' },
+    { State: 'Bihar', city: 'Kishanganj' },
+    { State: 'Bihar', city: 'Kaimur' },
+    { State: 'Bihar', city: 'Katihar' },
+    { State: 'Bihar', city: 'Lakhisarai' },
+    { State: 'Bihar', city: 'Madhubani' },
+    { State: 'Bihar', city: 'Munger' },
+    { State: 'Bihar', city: 'Madhepura' },
+    { State: 'Bihar', city: 'Muzaffarpur' },
+    { State: 'Bihar', city: 'Nalanda' },
+    { State: 'Bihar', city: 'Nawada' },
+    { State: 'Bihar', city: 'Patna' },
+    { State: 'Bihar', city: 'Purnia' },
+    { State: 'Bihar', city: 'Rohtas' },
+    { State: 'Bihar', city: 'Saharsa' },
+    { State: 'Bihar', city: 'Samastipur' },
+    { State: 'Bihar', city: 'Sheohar' },
+    { State: 'Bihar', city: 'Sheikhpura' },
+    { State: 'Bihar', city: 'Saran' },
+    { State: 'Bihar', city: 'Sitamarhi' },
+    { State: 'Bihar', city: 'Supaul' },
+    { State: 'Bihar', city: 'Siwan' },
+    { State: 'Bihar', city: 'Vaishali' },
+    { State: 'Bihar', city: 'West Champaran' },
+    // state madhya pradesh
+    { State: 'Madhya Pradesh', city: 'Agar Malwa' },
+    { State: 'Madhya Pradesh', city: 'Alirajpur' },
+    { State: 'Madhya Pradesh', city: 'Anuppur' },
+    { State: 'Madhya Pradesh', city: 'Ashoknagar' },
+    { State: 'Madhya Pradesh', city: 'Balaghat' },
+    { State: 'Other', city: 'Other' }
+  ];
+  $(document).ready(function () {
+    debugger;
+    $(".divOtherCountry").hide();
+    $(".divOtherState").hide();
+    $(".divOtherCity").hide();
+    $("#dpdlCountry").change(function () {
+      debugger;
+      if ($("#dpdlCountry").val() == "Other") {
+        $(".divOtherCountry").show();
+        const option = "<option val='Other'>Other</option>";
+        $("#dpdlState").append(option);
+      } else {
+        $(".divOtherCountry").hide();
+        $(".divOtherState").hide();
+        $(".divOtherCity").hide();
+        $("#dpdlState").html("<option selected>Choose State</option>");
+        $("#dpdlCity").html("<option selected>Choose District</option>");
+        const states = stateList.filter(m => m.Country == $("#dpdlCountry").val() || m.Country == "Other");
+        states.forEach(element => {
+          const option = "<option val='" + element.State + "'>" + element.State + "</option>";
+          $("#dpdlState").append(option);
+        });
+      }
+    });
+
+    $("#dpdlState").change(function () {
+      debugger;
+      if ($("#dpdlState").val() == "Other") {
+        $(".divOtherState").show();
+        const option = "<option val='Other'>Other</option>";
+        $("#dpdlCity").append(option);
+      } else {
+        $(".divOtherState").hide();
+        $(".divOtherCity").hide();
+        $("#dpdlCity").html("<option selected>Choose District</option>");
+        debugger;
+        const states = cityList.filter(m => m.State == $("#dpdlState").val() || m.State == "Other");
+        states.forEach(element => {
+          const option = "<option val='" + element.city + "'>" + element.city + "</option>";
+          $("#dpdlCity").append(option);
+        });
+      }
+    });
+
+    $("#dpdlCity").change(function () {
+      debugger;
+      if ($("#dpdlCity").val() == "Other") {
+        $(".divOtherCity").show();
+      } else {
+        $(".divOtherCity").hide();
+      }
+    });
+  });
+</script>
+  <!-- /.content-wrapper -->
+{% endblock %}
+
